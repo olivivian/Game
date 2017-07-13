@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹窗</title>
+	<script type="text/javascript">
+		function myFunction(){
+			alert("你好，我是一个警告框！");
+		}
+	</script>
+</head>
+<body>
+<!--alert弹窗-->
+<h1>alert弹窗</h1>
+	<input type="button" onclick="myFunction()" value="显示警告框">
+
+<!--alert弹窗带换行-->
+<h1>alert弹窗换行</h1>
+<p>点击按钮在弹窗总使用换行</p>
+<button onclick="myFunction1()">点击按钮</button>
+<script type="text/javascript">
+	function myFunction1(){
+		alert("Hello\nHow are you?");
+	}
+</script>
+
+<!--confirm确认框-->
+<h1>confirm确认框</h1>
+<button onclick="myFunction2()">点击按钮</button>
+<p id="demo"></p>
+<script type="text/javascript">
+	function myFunction2(){
+           var x;
+           var r=confirm("按下按钮");
+           if (r==true) {
+           	x="你按下了\"确定\"按钮！";
+           }
+           else{
+           	x="你按下了\"取消\"按钮！";
+           }
+           document.getElementById("demo").innerHTML=x;
+	}
+</script>
+
+<!--prompt提示框-->
+<h1>prompt提示框</h1>
+<p>点击按钮查看输入的对话框。</p>
+<button onclick="myFunction3()">点击按钮</button>
+<p id="demo_a"></p>
+<script type="text/javascript">
+	function myFunction3(){
+		var x;
+		var person=prompt("请输入你的名字","Harry Potter");
+		if(person!=null&&person!=""){
+			x="你好"+person+"!今天感觉如何？";
+			document.getElementById("demo_a").innerHTML=x;
+		}
+	}
+</script>
+
+
+
+</body>
+</html>

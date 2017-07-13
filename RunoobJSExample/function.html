@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数</title>
+	<script type="text/javascript">
+		function myFunction(){
+			document.getElementById("demo").innerHTML="我的第一个JavaScript函数"
+		}
+	</script>
+	<!--也可放在body-->
+</head>
+<body>
+<!--第一个JS函数测试-->
+	<p id="demo">一个段落</p>
+	<button type="button" onclick="myFunction()">点击这里</button>
+
+<!--JS函数弹出警告-->
+<h1>JS函数弹出警告</h1>
+<p>当按钮点击后，一个函数将被执行，该函数结果警告一条信息。</p>
+<button onclick="myFunction1()">点击按钮</button>
+<script type="text/javascript">
+	function myFunction1(){
+		alert("你好，世界！");
+	}
+</script>
+
+<!--JS带参函数-->
+<h1>JS带参函数</h1>
+<p>点击这个按钮，来调用带参数的函数。</p>
+<button onclick="myFunction('Harry Potter','Wizard')">点击这里</button>
+<script type="text/javascript">
+	function myFunction(name,job){
+		alert("Welcome "+name+" , the "+job);
+	}
+</script>
+
+<!--JS带参函数2-->
+<h1>JS带参函数2</h1>
+<p>当你点击其中任意一个按钮，一个函数将被执行，函数结果弹出一个警告显示传递的参数。</p>
+<form>
+<input type="button" onclick="myfunction('Good Morning!')" value="在早上">
+<input type="button" onclick="myfunction('Good Evening!')" value="在晚上">
+</form>
+<script type="text/javascript">
+	function myfunction(txt){
+		alert(txt);
+	}
+</script>
+
+<!--JS返回值的函数-->
+<h1>返回值的函数</h1>
+<script type="text/javascript">
+	function myFunction2(){
+		return("Hello world!");
+	}
+</script>
+<script type="text/javascript">
+	document.write(myFunction2());
+</script>
+
+<!--JS带有参数并返回值的函数-->
+<h1>JS带有参数并返回值的函数</h1>
+<p>本例调用的函数会执行一个计算，然后返回结果：</p>
+<p id="demo_a"></p>
+<script type="text/javascript">
+	function myFunction3(a,b){
+		return a*b;
+	}
+	document.getElementById("demo_a").innerHTML=myFunction3(4,3);
+</script>
+
+<!--全局变量计数-->
+<h1>全局变量计数</h1>
+<button type="button" onclick="myFunction4()">计数</button>
+<p id="demo_b">0</p>
+<script type="text/javascript">
+	var counter = 0;
+	function add_a(){
+		return counter +=1;
+	}
+	function myFunction4(){
+		document.getElementById("demo_b").innerHTML=add_a();
+	}
+</script>
+
+<!--局部变量计数-->
+<h1>局部变量计数</h1>
+<p>输出的都是 1,并不能实现计数</p>
+<button type="button" onclick="myFunction5()">计数</button>
+<p id="demo_c">0</p>
+<script type="text/javascript">
+	function add_b(){
+		var counter = 0;
+		return counter +=1;
+	}
+	function myFunction5(){
+		document.getElementById("demo_c").innerHTML=add_b();
+	}
+</script>
+
+<!--JS内嵌函数-->
+<h1>局部变量计数方法改进</h1>
+<p id="demo_d">0</p>
+<script type="text/javascript">
+document.getElementById("demo_d").innerHTML = add_c();
+function add_c() {
+    var counter = 0;
+    function plus() {counter += 1;}
+    plus();    
+    plus();
+    plus();
+    return counter; 
+}
+</script>
+<p>问题：如果我们能在外部访问 plus() 函数，这样就能解决计数器的困境。
+我们同样需要确保counter=0只执行一次。
+我们需要闭包。</p>
+<p style="color:red">
+内嵌函数plus()可以访问父函数的counter 变量。<br>
+实际上，在 JavaScript 中，所有函数都能访问它们上一层的作用域。<br>
+JavaScript 支持嵌套函数。嵌套函数可以访问上一层的函数变量。
+</p>
+
+<!--JavaScript闭包-->
+<h1>局部变量计数闭包版</h1>
+<button type="button" onclick="myFunction6()">计数</button>
+<p id="demo_e">0</p>
+<script type="text/javascript">
+	var add_d = (function(){
+		var counter = 0;
+		return function(){return counter += 2;}
+	})();//为什么后面要对一个括号？
+
+	function myFunction6(){
+		document.getElementById("demo_e").innerHTML=add_d();
+	}
+</script>
+<p>
+变量 add_d 指定了函数自我调用的返回字值。<br>
+自我调用函数只执行一次。设置计数器为 0。并返回函数表达式。<br>
+add_d变量可以作为一个函数使用。非常棒的部分是它可以访问函数上一层作用域的计数器。<br>
+这个叫作 JavaScript 闭包。它使得函数拥有私有变量变成可能。<br>
+计数器受匿名函数的作用域保护，只能通过 add_d方法修改。<br>
+</p>
+<p style="color: red">闭包是可访问上一层函数作用域里变量的函数，即便上一层函数已经关闭。</p>
+
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript循环</title>
+</head>
+<body>
+<!--For循环-->
+<h1>单击按钮将代码块循环执行5次。</h1>
+<button onclick="myFunction()">点击按钮</button>
+<p id="demo"></p>
+<script type="text/javascript">
+	function myFunction(){
+		var x="",i;
+		for(i=0;i<5;i++){
+			x=x+"这个数字是"+i+"<br>";
+		}
+		document.getElementById("demo").innerHTML=x;
+	}
+</script>
+
+<!--循环输出HTML标题-->
+<h1>单击按钮将HTML标题设置从1到6的样式显示</h1>
+<button onclick="myFunction1()">点击按钮</button>
+<div id="demo_a"></div>
+<script type="text/javascript">
+	function myFunction1(){
+		var x="",i;
+		for(i=1;i<6;i++){
+			x=x + "<h" + i + ">Heading" + i +"</h" + i +">"; 
+		}
+		document.getElementById("demo_a").innerHTML=x;
+	}
+</script>
+
+<!--While循环-->
+<h1>点击按钮，只要i小于5就一直循环代码块。</h1>
+<button onclick="myFunction2()">点击这里</button>
+<p id="demo_b"></p>
+<script type="text/javascript">
+	function myFunction2(){
+		var x="",i=0;
+		while(i<5){
+			x=x + "该数字为" + i + "<br>";
+			i++;
+		}
+		document.getElementById("demo_b").innerHTML=x;
+	}
+
+</script>
+
+<!--Do while循环-->
+<h1>点击下面的按钮，只要i小于5就一直循环代码块。</h1>
+<button onclick="myFunction3()">点击这里</button>
+<p id="demo_c"></p>
+<script type="text/javascript">
+	function myFunction3(){
+		var x="",i=0;
+		do{
+			x=x + "该数字为" + i + "<br>";
+			i++;
+		}
+		while(i<5)
+		document.getElementById("demo_c").innerHTML=x;
+	}
+</script>
+
+<!--break语句-->
+<h1>点击按钮，测试带有break语句的循环。</h1>
+<button onclick="myFunction4()">点击这里</button>
+<p id="demo_d"></p>
+<script type="text/javascript">
+	function myFunction4(){
+		var x="",i=0;
+		for(i=0;i<10;i++){
+			if (i==3) {
+				break;
+			}
+			x=x + "该数字为" + i + "<br>";
+		}
+		document.getElementById("demo_d").innerHTML=x;
+	}
+</script>
+
+<!--continue语句-->
+<h1>点击下面的按钮来执行循环，该循环会跳过i=3的步进。</h1>
+<button onclick="myFunction5()">点击这里</button>
+<p id="demo_e"></p>
+<script type="text/javascript">
+	function myFunction5(){
+		var x="",i=0;
+		for(i=0;i<10;i++){
+			if (i==3) {
+				continue;
+			}
+			x=x + "该数字为" + i + "<br>";
+		}
+		document.getElementById("demo_e").innerHTML=x;
+	}
+</script>
+
+<!--使用For...in声明来遍历数组内的元素-->
+<h1>点击下面的按钮，循环遍历对象"person"的属性。</h1>
+<button onclick="myFunction6()">点击这里</button>
+<p id="demo_f"></p>
+<script type="text/javascript">
+	function myFunction6(){
+		var x;
+		var txt="";
+		var person={
+			fname:"Bill",lname:"Gates",age:56
+		};
+		for(x in person){
+			txt=txt + " " + person[x];
+		}
+		document.getElementById("demo_f").innerHTML=txt;
+	}
+	//for...in - 循环遍历对象的属性
+</script>
+
+
+<!--For循环输出数组-->
+<h1>For循环输出数组</h1>
+<script type="text/javascript">
+	cars1=["BMW", "Volvo", "Saab", "Ford"];
+	for(var i=0; i<cars1.length; i++){
+        document.write(cars1[i] + " ");
+	}
+</script>
+<!--语句 1 是可选的，也就是说不使用语句 1 也可以。-->
+<br>
+<script>
+cars2=["BMW","Volvo","Saab","Ford"];
+var i=2,len=cars2.length;
+for (; i<len; i++){
+    document.write(cars2[i] + " ");
+}
+</script>
+<!--语句2同样是可选的，如果省略了语句2，那么必须在循环内提供 break。否则循环就无法停下来。这样有可能令浏览器崩溃-->
+
+<!--语句 3 也可以省略（比如当循环内部有相应的代码时）-->
+<br>
+<script>
+cars=["BMW","Volvo","Saab","Ford"];
+var i=0,len=cars.length;
+for (; i<len; ){
+	document.write(cars[i] + " ");
+	i++;
+}
+</script>
+
+</body>
+</html>

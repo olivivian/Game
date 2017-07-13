@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变量</title>
+</head>
+<body>
+<!--认识JS变量-->
+	<h1>声明一个变量，为它赋值，然后显示出来</h1>
+	<script type="text/javascript">
+		var firstname;
+		firstname="Hege";
+		document.write(firstname);
+		document.write("<br>");
+		firstname="Tove";
+		document.write(firstname);
+	</script>
+	<p>上面的脚本定义了一个变量，给变量分配一个值并显示，再次修改变量的值后，再次显示。</p>
+
+<!--声明创建变量-->
+<h1>点击这里来创建变量，并显示结果。</h1>
+<button onclick="myFunction()">点击这里</button>
+<p id="demo"></p>
+<script type="text/javascript">
+	function myFunction(){
+		var carname="Volvo";
+		document.getElementById("demo").innerHTML=carname;
+	}
+</script>
+<p>创建了名为 carname 的变量，并向其赋值 "Volvo"，然后把它放入 id="demo" 的 HTML 段落中</p>
+
+<!--JavaScript 算数-->
+<h1>假设y=5,计算x=y+2，并显示结果。</h1>
+<button onclick="myFunction1()">点击这里</button>
+<p id="demo_a"></p>
+<script type="text/javascript">
+	function myFunction1(){
+		var y=5;
+		var x=y+2;
+		var demoP=document.getElementById("demo_a");
+		demoP.innerHTML="x="+x;
+	}
+</script>
+
+
+
+
+
+</body>
+</html>

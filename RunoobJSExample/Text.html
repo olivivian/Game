@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文本</title>
+</head>
+<body>
+<!--JS输出文本-->
+	<h1>我的第一个Web页面</h1>
+	<p>我的第一个段落。</p>
+	<script>
+		document.write(Date());
+	</script>
+
+<!--JS改变HTML元素-->
+<h1>修改段落</h1>
+<p id="demo_a">这是一个将被修改的段落</p>
+<script>
+	document.getElementById("demo").innerHTML="段落已修改";
+</script>
+
+<!--JS能够直接写入HTML输出流中-->
+<h1>JS能够直接写入HTML输出流中</h1>
+<script>
+	document.write("<h3>这是一个标题</h3>");
+	document.write("<p>这是一个段落。</p>");
+</script>
+<p>
+您只能在HTML输出流中使用<strong>document.write</strong>。
+如果您在文档已加载后使用它（比如在函数中），会覆盖整个文档。
+</p>
+
+<!--JS语句-->
+<h1>JS语句</h1>
+<p id="demo_b">一个段落</p>
+<div id="myDIV_b">一个DIV</div>
+<script type="text/javascript">
+	document.getElementById("demo_b").innerHTML="你好 Dolly";
+	document.getElementById("myDIV_b").innerHTML="你最近怎么样？";
+</script>
+<p style="color: red;">JavaScript语句是发给浏览器的命令，这些命令的作用是告诉浏览器要做的事情。</p>
+
+<!--JS代码块-->
+<h1>JS代码块</h1>
+<p id="myPar_c">我是一个段落。</p>
+<div id="myDiv_c">我是一个DIV</div>
+<p><button type="button" onclick="myFunction()">点击这里</button></p>
+<script type="text/javascript">
+	function myFunction(){
+		document.getElementById("myPar_c").innerHTML="你好世界！";
+		document.getElementById("myDiv_c").innerHTML="你最近怎么样？";
+	}
+</script>
+<p>当您点击上面按钮时，两个元素会改变。</p>
+
+<!--JS单行注释-->
+<h1>单行注释</h1>
+<p id="myP"></p>
+<p id="myP_d"></p>
+<script type="text/javascript">
+	//输出段落一：
+	document.getElementById("myP").innerHTML="Welcome to my Homepage";
+	//输出段落二：
+	document.getElementById("myP_d").innerHTML="This is my first paragraph";
+</script>
+<p><b>注释：</b>注释不会被执行。</p>
+
+<!--JS多行注释-->
+<h1>多行注释</h1>
+<p id="myP_e1"></p>
+<p id="myP_e2"></p>
+<script type="text/javascript">
+	/*
+	下面的这些代码会输出两个段落
+	 */
+	document.getElementById("myP_e1").innerHTML="这是段落一";
+	document.getElementById("myP_e2").innerHTML="这是段落二";
+</script>
+<p><b>注释：</b>注释块不会被执行。</p>
+
+<!--JS分号问题-->
+<h1>用JS做加法</h1>
+<p id="demo_f1"></p>
+<p id="demo_f2"></p>
+<script type="text/javascript">
+	a=1;
+	b=2;
+	c=a+b;
+	document.getElementById("demo_f1").innerHTML=c;
+	x=1;y=2;z=x+y;
+	document.getElementById("demo_f2").innerHTML=z;
+	/*
+	分号用于分隔 JavaScript 语句。
+	通常我们在每条可执行的语句结尾添加分号。
+	使用分号的另一用处是在一行中编写多条语句。
+	在 JavaScript 中，用分号来结束语句是可选的。
+	 */
+</script>
+
+</body>
+</html>

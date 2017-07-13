@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS事件和错误处理</title>
+</head>
+<body>
+<!--onclick事件-->
+<h1>onclick事件</h1>
+<p id="demo">这是一个段落</p>
+<button type="button" onclick="displayDate1()">显示日期</button>
+<script type="text/javascript">
+	function displayDate1(){
+		document.getElementById("demo").innerHTML=Date();
+	}
+</script>
+
+<h1 onclick="this.innerHTML='Ooops!'">点击文本！</h1>
+
+<h1 onclick="changetext(this)">点击这里!</h1>
+<script type="text/javascript">
+	function changetext(id){
+		id.innerHTML="哈哈!";
+	}
+</script>
+
+<!--onmouseover事件-->
+<h1>onmouseover事件</h1>
+<img src="images/planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+<map name="planetmap">
+<area shape="rect" coords="0,0,82,126" onmouseover="writeText('太阳和气体巨星类似木星是太阳系中最大的物体。')" href ="sun.htm" target ="_blank" alt="Sun">
+<area shape ="circle" coords ="90,58,3"
+onmouseover="writeText('从地球上很难研究水星，因为它太接近太阳。')"
+ href ="mercur.htm" target ="_blank" alt="Mercury" />
+<area shape ="circle" coords ="124,58,8"
+onmouseover="writeText('至到1960年，金星经常被认为是地球的孪生妹妹，因为金星是最靠近我们的行星，并且两个行星有很多相似的特点。')" t')"
+ href ="venus.htm" target ="_blank" alt="Venus" />
+</map>
+<p id="desc">鼠标在太阳和星星上移动，可以看到不同的描述。</p>
+<script type="text/javascript">
+	function writeText(txt){
+		document.getElementById("desc").innerHTML=txt;
+	}
+</script>
+
+<!--使用HTML DOM来分配事件-->
+<h1>点击按钮执行<i>displayDate()</i>函数</h1>
+<button id="myBtn">点这里！</button>
+<p id="demo_a"></p>
+<script type="text/javascript">
+	document.getElementById("myBtn").onclick=function(){displayDate()};
+	function displayDate(){
+		document.getElementById("demo_a").innerHTML=Date();
+	}
+</script>
+
+<!--onchange 事件-->
+<h1>onchange 事件</h1>
+输入你的名字:<input type="text" id="fname" onchange="myFunction()">
+<p>当你离开输入框后，函数将被触发，将小写字母转为大写字母。</p>
+<script type="text/javascript">
+	function myFunction(){
+		var x=document.getElementById("fname");
+		x.value=x.value.toUpperCase();
+	}
+</script>
+
+<!-- onmouseover-onmouseout事件可用于在用户的鼠标移至 HTML 元素上方或移出元素时触发函数-->
+<h1>onmouseover-onmouseout事件</h1>
+<div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:red;width: 120px;height: 20px;padding: 40px;">Mouse Over Me</div>
+<script type="text/javascript">
+	function mOver(obj){
+		obj.innerHTML="Thank You"
+	}
+	function mOut(obj){
+		obj.innerHTML="Mouse Over Me"
+	}
+</script>
+
+<h1 onmouseover="style.color='red'"onmouseout="style.color='black'">将鼠标移至文部上</h1>
+<!--onfocus-->
+<h1>onfocus</h1>
+输入你的名字:<input type="text" onfocus="myFunction1(this)">
+<p>当输入框获取焦点时，修改背景色（background-color属性）将被触发。</p>
+<script type="text/javascript">
+	function myFunction1(x){
+		x.style.background="yellow";
+	}
+</script>
+
+<!--try...catch语句-->
+<h1>try...catch</h1>
+<input type="button" value="查看消息" onclick="message()">
+<script type="text/javascript">
+	var txt_a=""
+	function message(){
+		try{
+			adddlert("Welcome guest!");
+		}
+		catch(err){
+			txt_a = "本页有一个错误。\n\n";
+            txt_a += "错误描述：" + err.message + "\n\n";
+            txt_a += "点击确定继续。\n\n";
+            alert(txt_a);
+		}
+	}
+</script>
+
+<!--带有确认框的try...catch语句-->
+<h1>带有确认框的try...catch语句</h1>
+<input type="button" value="查看消息" onclick="message1()">
+<script type="text/javascript">
+	var txt_b="";
+	function message1(){
+		try{
+			adddlert("Welcome guest!");
+		}
+		catch(err){
+			txt_b = "本页有一个错误。\n\n";
+			txt_b +="单击确定继续转跳\n";
+			txt_b +="或者单击取消返回 \n\n";
+			if (confirm(txt_b)) {
+				document.location.href="http://www.runoob.com/";
+			}
+		}
+	}
+</script>
+
+<!--onerror事件-->
+<h1>onerror事件</h1>
+<input type="button" value="查看消息" onclick="message2()">
+<script type="text/javascript">
+	onerror = handleErr;
+	var txt_c="";
+	function handleErr(msg, url, l){
+		txt_c = "该页面有一个错误 \n\n";
+		txt_c += "错误" + msg + "\n";
+		txt_c += "URL:" + url + "\n";
+		txt_c += "行:" + l + "\n\n";
+		txt_c += "点击确定继续。\n\n";
+		alert(txt_c);
+		return true;
+	}
+	function message2(){
+		adddlert("Welcome guest!");
+	}
+</script>
+
+<!--throw 语句允许我们创建自定义错误。-->
+<h1>throw 语句</h1>
+<p>请输出一个 5 到 10 之间的数字:</p>
+<input id="demo_b" type="text">
+<button type="button" onclick="myFunction2()">测试输入</button>
+<p id="message3"></p>
+
+<script>
+function myFunction2() {
+    var message3, x;
+    message3 = document.getElementById("message3");
+    message3.innerHTML = "";
+    x = document.getElementById("demo_b").value;
+    try { 
+        if(x == "")  throw "值为空";
+        if(isNaN(x)) throw "不是数字";
+        x = Number(x);
+        if(x < 5)    throw "太小";
+        if(x > 10)   throw "太大";
+    }
+    catch(err) {
+        message3.innerHTML = "错误: " + err;
+    }
+}
+</script>
+
+</body>
+</html>

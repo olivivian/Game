@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>高级JavaScript实例</title>
+</head>
+<body>
+<!--创建一个欢迎cookie-->
+<!--简单的计时-->
+<h1>简单计时</h1>
+<p>点击按钮，在等待3秒后弹出"Hello"。</p>
+<button onclick="myFunction()">点击</button>
+<script type="text/javascript">
+	function myFunction(){
+		setTimeout(function(){alert("Hello")},3000);
+	}
+</script>
+
+<!--另一个简单的计时-->
+<h1>另一个简单的计时</h1>
+<p>点击下面的按钮，输出的文本将告诉你2秒，4秒，6秒已经过去了。</p>
+<form>
+<input type="button" value="显示文本时间！" onclick="timedText()">
+<input type="text" id="txt">
+</form>
+<script type="text/javascript">
+	function timedText(){
+		var x=document.getElementById('txt');
+		var t1=setTimeout(function(){x.value="2 seconds"},2000);
+		var t2=setTimeout(function(){x.value="4 seconds"},4000);
+		var t3=setTimeout(function(){x.value="6 seconds"},6000);
+	}
+</script>
+
+<!--在一个无穷循环中的计时事件-->
+<h1>在一个无穷循环中的计时事件</h1>
+<p>点击按钮，输入框将从0开始一直计数。</p>
+<form>
+	<input type="button" value="开始计数！" onClick="doTimer()">
+	<input type="text" id="txt-a">
+</form>
+<script type="text/javascript">
+	var c=0;
+	var t;
+	var timer_is_on=0;
+	function timedCount(){
+		document.getElementById('txt-a').value=c;
+		c=c+1;
+		t=setTimeout("timedCount()",1000);
+	}
+	function doTimer(){
+		if (!timer_is_on) {
+			timer_is_on=1;
+			timedCount();
+		}
+	}
+</script>
+
+<!--带有停止按钮的无穷循环中的计时事件-->
+<h1>有停止按钮的无穷计时器</h1>
+<form>
+<input type="button" value="开始计数" onclick="doTimer2()">
+<input type="text" id="txt-b">
+<input type="button" value="停止计数" onclick="stopCount()">
+</form>
+<script type="text/javascript">
+	var c=0;
+	var t;
+	var timer_is_on=0;
+	function timedCount(){
+		document.getElementById('txt-b').value=c;
+		c=c+1;
+		t=setTimeout(function(){timedCount()},1000);
+	}
+	function doTimer2(){
+		if (!timer_is_on) {
+			timer_is_on=1;
+			timedCount();
+		}
+	}
+	function stopCount(){
+		clearTimeout(t);
+		timer_is_on=0;
+	}
+</script>
+
+<!--使用计时事件制作的钟表-->
+<h1>电子表</h1>
+<form>
+	<input type="button" value="开始计数" onclick="startTime()">
+    <div id="txt-c"></div>
+
+</form>
+<script type="text/javascript">
+	function startTime(){
+		var today=new Date();
+		var h=today.getHours();
+		var m=today.getMinutes();
+		var s=today.getSeconds();//在小于10的数字前加一个'0'
+		m=checkTime(m);
+		s=checkTime(s);
+		document.getElementById('txt-c').innerHTML=h+":"+m+":"+s;
+		t=setTimeout(function(){startTime()},500);
+	}
+	function checkTime(i){
+		if(i<10){
+			i="0"+i;
+		}
+		return i;
+	}
+</script>
+
+<!--创建对象的实例-->
+<h1>创建对象实例</h1>
+<script type="text/javascript">
+	person={
+		firstname:"John",
+		lastname:"Doe",
+		age:50,
+		eyecolor:"blue"
+	}
+	document.write(person.firstname + " is " + person.age + " years old");
+</script>
+
+<!--创建用于对象的模板-->
+<h1>创建用于对象的模板</h1>
+<script type="text/javascript">
+	function person(firstname,lastname,age,eyecolor){
+		this.firstname=firstname;
+		this.lastname=lastname;
+		this.age=age;
+		this.eyecolor=eyecolor;
+	}
+	myFather=new person("John", "Doe", 50, "blue");
+	document.write(myFather.firstname + " is "+myFather.age+" years old");
+</script>
+
+
+</body>
+</html>
