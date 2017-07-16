@@ -1,0 +1,7 @@
+*{  margin:0px; padding:0px;}
+body{ text-align:center; font-family:Arial, Helvetica, sans-serif;}
+#shizhong{ margin-left:auto; margin-right:auto; width:236px; height:264px; overflow:hidden; background:url(../images/2.gif) no-repeat; margin-top:50px;}
+#xq{ color:#FFF; text-align:center;  height:72px; line-height:72px; font-size:30px;}
+#riqi{ font-size:120px; color:#000; height:140px; line-height:140px;}
+#shizhong h3{ line-height:24px; font-size:20px; color:#666}
+#yue{ margin-right:10px;}

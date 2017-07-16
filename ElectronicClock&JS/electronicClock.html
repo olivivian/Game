@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>电子时钟</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script language="javascript">
+function getTime(){
+	var date = new Date();
+	var showyear = document.getElementById("nian");
+	var showmonth = document.getElementById("yue");
+	var showweek = document.getElementById("xq");
+	var showday = document.getElementById("riqi");
+	var showtime = document.getElementById("shijian");
+
+    var weekday = new Array(7);
+    weekday[0]="Sunday";
+	weekday[1]="Monday";
+	weekday[2]="Tuesday";
+	weekday[3]="Wednesday";
+	weekday[4]="Thursday";
+	weekday[5]="Friday";
+	weekday[6]="Saturday";
+
+    showyear.innerText = date.getFullYear();
+    showmonth.innerText = date.getMonth()+1;
+    showweek.innerText = weekday[date.getDay()];
+    showday.innerText = date.getDate();//获得当前日期(1-31)
+
+	hour = date.getHours();
+	hour = hour<10?"0"+hour:hour;
+	minute = date.getMinutes();
+	minute = minute<10?"0"+minute:minute;
+	seconds = date.getSeconds();
+	seconds = seconds<10?"0"+seconds:seconds;
+
+	showtime.innerText=hour+":"+minute+":"+seconds;
+	//window.setTimeout(function(){getTime()},1000);
+}
+function starClock(){
+	getTime();
+	clockTime = window.setInterval(function(){getTime();},1000);
+}
+</script>
+</head>
+
+<body onload="starClock()">
+
+    <div id="shizhong">
+           <h1  id="xq">Wednesday</h1>
+           <h2 id="riqi">30</h2>
+           <h3>
+               <span id="nian">2008</span>.<span id="yue">Feb</span>   <span id="shijian">12:30:59</span> 
+           </h3>
+    </div>
+    <div>
+    </div>
+  
+</body>
+</html>
