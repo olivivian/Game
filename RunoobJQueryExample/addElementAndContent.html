@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery HTML添加元素/内容</title>
+	<script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<h1>在选取元素的末尾添加内容</h1>
+<!--append()在选取元素的末尾添加内容
+<p>这是一个段落</p>
+<p>这是另外一个段落</p>
+<ol>
+	<li>List item 1</li>
+	<li>List item 2</li>
+	<li>List item 3</li>
+</ol>
+<button id="btn1">添加文本</button>
+<button id="btn2">添加列表项</button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+			$("p").append("<b> 追加文本</b>");
+		});
+		$("#btn2").click(function(){
+			$("ol").append("<li>追加列表项</li>");
+		});
+	});
+</script>-->	
+
+<h1>在选取元素的开头添加内容</h1>
+<!--prepend()在选取元素的开头添加内容	
+<p>这是一个段落</p>
+<p>这是另外一个段落</p>
+<ol>
+	<li>List item 1</li>
+	<li>List item 2</li>
+	<li>List item 3</li>
+</ol>
+<button id="btn1">添加文本</button>
+<button id="btn2">添加列表项</button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+			$("p").prepend("<b>在开头追加文本</b>");
+		});
+		$("#btn2").click(function(){
+			$("ol").prepend("<li>在开头添加列表项</li>");
+		});
+	});
+</script>-->
+
+<h1>创新新的 text/HTML 元素, jQuery 和 JavaScript/DOM。添加在新元素文本后。</h1>
+<!--append()插入多个元素
+<p id="txt">这是一个段落</p>
+<button onclick="appendText()">追加文本</button>
+<script type="text/javascript">
+function appendText(){
+	// 使用 HTML 标签创建文本
+	var txt1 = "<p>文本1</p>";
+	// 使用 jQuery 创建文本
+	var txt2 = $("<p></p>").text("文本2");
+	// 使用 DOM 创建文本 text with DOM
+	var txt3 = document.createElement("p");
+	txt3.innerHTML='文本3';
+	// 追加新元素
+		$("body").append(txt1,txt2,txt3);
+}
+</script>-->	
+
+<h1>在选取元素的前后添加 HTML元素</h1>
+<!--after()和before()在选取元素的前后添加HTML元素
+<img src="images/1.jpg">
+<br><br>
+<button id="btn1">之前插入</button>
+<button id="btn2">之后插入</button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#btn1').click(function(){
+			$('img').before('<b>之前插入</b>');
+		});
+		$('#btn2').click(function(){
+			$('img').after('<i>之后插入</i>');
+		});
+	});
+</script>-->
+
+<h1>after()插入多个元素</h1>
+<!--after()插入多个元素-->	
+<img src="images/1.jpg">
+<br><br>
+<button onclick="afterText()">之后插入</button>
+<script type="text/javascript">
+	function afterText(){
+		var txt1 = '<b>I </b>'; // 使用 HTML 创建元素
+		var txt2 = $('<i></i>').text('love '); // 使用 jQuery 创建元素
+		var txt3 = document.createElement('big'); // 使用 DOM 创建元素
+		txt3.innerHTML='jQuery';  
+		$('img').after(txt1,txt2,txt3);// 在图片后添加文本
+	}
+</script>
+</body>
+</html>

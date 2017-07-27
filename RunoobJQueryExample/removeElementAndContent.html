@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery HTML移除元素/内容</title>
+	<script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<h1>移除选取的元素</h1>
+<!--remove()-->
+
+<div style="height: 150px;width: 300px;border: 1px solid #000">
+	<p>div中的段落一</p>
+	<p>div中的段落二</p>
+	<p>div中的段落三</p>
+</div>
+<br>
+<button>移除div元素</button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('button').click(function(){
+			$('div').remove();
+		});
+	});
+</script>
+<h1>移除选取元素的所有子元素</h1>
+<!--empty()
+<div style="height: 150px;width: 300px;border: 1px solid #000">
+	<p>div中的段落一</p>
+	<p>div中的段落二</p>
+	<p>div中的段落三</p>
+</div>
+<br>
+<button>清空div元素</button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('button').click(function(){
+			$('div').empty();
+		});
+	});
+</script>-->
+
+<h1>过滤元素并移除</h1>
+<!--remove()使用参数
+<div id="div" style="height: 150px;width: 300px;border: 1px solid #000">
+	<p>div中的段落一</p>
+	<p class="demo">div中的段落二</p>
+	<p class="demo">div中的段落三</p>
+</div>
+<br>
+<button>移除所有 class="demo" 的p元素</button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('button').click(function(){
+			$('p').remove('.demo');//p下的demo
+		});
+	});
+</script>-->
+</body>
+</html>

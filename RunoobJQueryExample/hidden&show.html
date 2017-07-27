@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery隐藏/显示</title>
+	<script src="js/jquery-3.2.1.min.js">
+</script>
+<style type="text/css">
+div.ex{
+	width: 400px;
+	background-color: #e5eecc;
+	padding: 7px;
+	border: solid 1px #c3c3c3;
+}
+</style>
+</head>
+<body>
+<h1>jQuery hide()方法</h1>
+<!-- jQuery hide()方法
+<p>点消失1</p>
+<p>点消失2</p>
+<p>点消失3</p>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("p").click(function(){
+		$(this).hide();
+	});
+});
+</script>-->
+
+<h1>隐藏和显示（两个按钮实现）</h1>
+<!--jQuery hide()和show()方法
+<p>这里有一个段落</p>
+<button id="hide">隐藏</button>
+<button id="show">显示</button>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#show").click(function(){
+		$("p").show();
+	});
+	$("#hide").click(function(){
+		$("p").hide();
+	});
+
+});
+</script>-->
+
+<h1>隐藏和显示（一个按钮实现）</h1>
+<!--jQuery toggle()
+<p>这里有一个段落</p>
+<p>这里有另一个段落</p>
+<button id="demo">隐藏/显示</button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#demo").click(function(){
+			$("p").toggle();
+		});
+	});
+	//jQuery toggle()用于切换hide()和show()方法。
+</script>-->
+
+<h1>另一个隐藏文本</h1>
+<!--另一个隐藏文本的实例
+<h3>Google</h3>
+<div class="ex">
+	<button class="hide">点我隐藏</button>
+	<p>站点名：Google</p>
+	<p>站点URL:http://www.google.com</p>
+</div>
+<h3>菜鸟教程</h3>
+<div class="ex">
+	<button class="hide">点我隐藏</button>
+	<p>站点名：菜鸟教程</p>
+	<p>URL:http://www.runoob.com</p>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".ex .hide").click(function(){
+			$(this).parents(".ex").hide("slow");
+		});
+	});
+</script>-->
+
+<h1>规定隐藏/显示的速度</h1>
+<!--规定隐藏/显示的速度-->
+<button id="demo">隐藏</button>
+<p>这里有一个段落</p>
+<p>这里有另一个段落</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#demo").click(function(){
+			$("p").hide(1000);
+		});		
+	});
+/*
+语法：
+$(selector).hide(speed,callback);
+$(selector).show(speed,callback);
+可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。
+可选的 callback 参数是隐藏或显示完成后所执行的函数名称。
+注：
+对于可选的 callback 参数，有以下两点说明：
+1.$(selector)选中的元素的个数为n个，则callback函数会执行n次；
+2.callback函数名后加括号，会立刻执行函数体，而不是等到显示/隐藏完成后才执行；
+3.callback既可以是函数名，也可以是匿名函数；
+ */
+</script>
+
+</body>
+</html>

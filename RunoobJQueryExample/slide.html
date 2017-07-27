@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery滑动</title>
+<script src="js/jquery-3.2.1.min.js">
+</script>
+	<style type="text/css">
+		#panel,#flip,#panel_a{
+			width: 300px;
+			padding: 5px;
+			text-align: center;
+			background: #e5eecc;
+			border: solid 1px #c3c3c3;
+		}
+		#panel{
+		    height: 100px;
+			display: none;
+		}
+		#panel_a{
+		    height: 100px;
+		}
+	</style>
+</head>
+<body>
+<h1>点击实现滑下面板</h1>
+<!-- jQuery slideDown()方法,用于向下滑动元素-->
+<div id="flip">点我滑下面板</div>
+<div id="panel">Hello world!</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#flip").click(function(){
+			$("#panel").slideDown("slow");
+		});
+	});
+</script>
+<h1>点击收回面板</h1>
+<!--jQuery slideUp()方法,用于向上滑动元素。
+<div id="flip">点我收回滑下面板</div>
+<div id="panel_a">Hello world</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#flip").click(function(){
+			$("#panel_a").slideUp("slow");
+		});
+	});
+</script>-->
+<h1>点击显示/隐藏面板</h1>
+<!-- jQuery slideToggle()方法
+<div id="flip">点击显示/隐藏面板</div>
+<div id="panel">Hello world</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+       $("#flip").click(function(){
+       	$("#panel").slideToggle("slow");
+       });
+	});
+</script>-->
+
+</body>
+</html>

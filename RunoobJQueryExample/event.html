@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery 事件</title>
+<script src="js/jquery-3.2.1.min.js">
+</script>
+</head>
+<body>
+<!-- jQuery click()事件-->
+<h1>click()事件,单击事件</h1>
+<p>如果你点我，我就会消失。</p>
+<p>点我消失!</p>
+<p>点我也消失！</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+			$("p").click(function(){
+				$(this).hide();
+			});
+	});
+</script>
+
+<h1>dblclick()事件，双击事件</h1>
+<!--jQuery dblclick()事件
+<p>双击鼠标左键，我就会消失</p>
+<p>双击我消失！</p>
+<p>双击我也消失！</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("p").dblclick(function(){
+			$(this).hide();
+		});
+	});
+</script>-->
+
+<h1>mouseenter()事件，当鼠标指针穿过元素时，会发生 mouseenter 事件。</h1>
+<!--jQuery mouseenter()事件
+<p id="p1">鼠标指针进入此处，会看到弹窗</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#p1").mouseenter(function(){
+			alert('您的鼠标移到了 id="p1" 的元素上!');
+		});
+	});
+</script>-->
+
+<h1>mouseleave()事件，当鼠标指针离开元素时发生</h1>
+<!-- jQuery mouseleave()事件
+<p id="p1">这是一个段落</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+      $("#p1").mouseleave(function(){
+      	alert('再见，您的鼠标离开了该段落!');
+      	}
+      	);
+	});
+</script>-->
+
+<h1>mousedown()事件,当鼠标指针移动到元素上方，并按下鼠标按键时发生</h1>
+<!-- jQuery mousedown()事件
+<p id="p1">这是一个段落</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#p1").mousedown(function(){
+			alert('鼠标在该段落上按下！');
+		});
+	});
+</script>-->
+
+<h1>mouseup()事件,当在元素上松开鼠标按钮时发生</h1>
+<!--jQuery mouseup()事件
+<p id="p1">这是一个段落</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#p1").mouseup(function(){
+			alert("鼠标在段落上松开。");
+		});
+	});
+</script>-->
+
+<h1>hover()模拟光标悬停事件</h1>
+<!--jQuery hover()事件
+事件，用于，当鼠标移动到元素上时，会触发指定的第一个函数(mouseenter);当鼠标移出这个元素时，会触发指定的第二个函数(mouseleave)。
+<p id="p1">这是一个段落</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#p1").hover(
+			function(){
+			alert("你进入了p1！");
+		    },/*此处有个逗号*/
+		    function(){
+		    	alert("拜拜！现在你离开了p1");
+		    }
+		);
+	});
+</script>-->
+
+<h1>focus()，当元素获得焦点时和blur()事件，当元素失去焦点时</h1>
+<!--jQuery focus()和blur()事件
+Name:<input type="txet" name=""><br>
+Email:<input type="text" name="">
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("input").focus(
+			function(){
+			$(this).css("background-color","#ccc")
+		});
+		$("input").blur(function(){
+			$(this).css("background-color","#fff");
+		});
+	});
+</script>-->
+
+</body>
+</html>

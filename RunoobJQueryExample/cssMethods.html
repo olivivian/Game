@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css()方法</title>
+	<script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<h1>返回第一个匹配元素的css属性</h1>
+<!--返回第一个匹配元素的css属性-->
+<h2>这是一个标题</h2>
+<p style="width: 200px;height: 25px;background-color: red;">这是一个段落</p>
+<p style="width: 200px;height: 25px;background-color: green;">这是一个段落</p>
+<p style="width: 200px;height: 25px;background-color: blue;">这是一个段落</p>
+<button>返回p元素的background-color</button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			alert("背景颜色= " + $("p").css("background-color"));
+		});
+	});
+</script>
+
+<h1>设置所有配置元素指定的css属性</h1>
+<!--设置所有配置元素指定的css属性
+<h2>这是一个标题</h2>
+<p style="background-color:#ff0000">这是一个段落。</p>
+<p style="background-color:#00ff00">这是一个段落。</p>
+<p style="background-color:#0000ff">这是一个段落。</p>
+<p>这是一个段落。</p>
+<button>设置 p 元素的 background-color </button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("p").css("background-color":"yellow");
+		});
+	});
+</script>-->
+
+<h1>设置多个匹配元素的css属性</h1>
+<!--设置多个匹配元素的css属性
+<h2>这是一个标题</h2>
+<p style="background-color:#ff0000">这是一个段落。</p>
+<p style="background-color:#00ff00">这是一个段落。</p>
+<p style="background-color:#0000ff">这是一个段落。</p>
+<p>这是一个段落。</p>
+<button>设置 p 元素的 background-color </button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("p").css({"background-color":"yellow","font-size":"200%"});
+		});
+	});
+</script>-->
+
+</body>
+</html>

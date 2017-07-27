@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery 选择器-</title>
+<script src="js/jquery-3.2.1.min.js">
+</script>
+</head>
+<body>
+<h1>隐藏当前的HTML</h1>
+<!--隐藏当前的HTML-->
+<button>点我</button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			$(this).hide();
+		});
+	});
+</script>
+
+<h1>隐藏所有&lt;p&gt;元素</h1>
+<!--隐藏所有<p>元素
+<p>这里有一个段落</p>
+<button>点我</button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+          $("p").hide();
+		});
+	});
+</script>-->
+
+<h1>隐藏所有class="test"的元素</h1>
+<!--隐藏所有class="test"的元素
+<p class="test">这里有一个段落</p>
+<p class="test">这里又有一个段落</p>
+<p>另一个段落</p>
+<button>点我</button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+         $(".test").hide();
+		});
+	});
+</script>-->
+
+<h1>隐藏id="test"的元素</h1>
+<!--隐藏id="test"的元素
+<p id="test">这里有一个段落</p>
+<button>点我</button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("#test").hide();
+		});
+	});
+</script>-->
+
+</body>
+</html>

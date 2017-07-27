@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery HTML设置内容和属性</title>
+	<script src="js/jquery-3.2.1.min.js">
+</script>
+</head>
+<body>
+<h1>设置替换内容</h1>
+<!-- jQuery text(), html()和val()方法设置内容-->
+<p class="text1">这是一个段落</p>
+<p class="text2">这是另外一个段落</p>
+输入框：<input type="text" value="hello" id="test"><br><br>
+<button id="btn1">设置文本</button>
+<button id="btn2">设置HTML</button>
+<button id="btn3">设置值</button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+			$(".text1").text("Hello World!");
+		});
+		$("#btn2").click(function(){
+			$(".text2").html("<b>Hello World!</b>");
+		});
+		$("#btn3").click(function(){
+			$("#test").val("你好!");
+		});
+	});
+</script>
+
+<h1>设置内容并使用回调函数</h1>
+<!-- text()和html()设置内容并使用回调函数？？？ 
+<p id="test1">这是一个有 <b>粗体</b> 字的段落。</p>
+<p id="test2">这是另外一个有 <b>粗体</b> 字的段落。</p>
+<button id="btn1">显示 新/旧 文本</button>
+<button id="btn2">显示 新/旧 HTML</button>
+<script>
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    $("#test1").text(function(i,origText){
+      return "旧文本: " + origText + " 新文本: Hello world! (index: " + i + ")"; 
+    });
+  });
+
+  $("#btn2").click(function(){
+    $("#test2").html(function(i,origText){
+      return "旧 html: " + origText + " 新 html: Hello <b>world!</b> (index: " + i + ")"; 
+    });
+  });
+
+});
+</script>-->
+
+<h1>设置属性值</h1>
+<!-- jQuery attr()方法设置属性值
+<a href="https://www.baidu.com/" id="test">百度</a><br><br>
+<button>修改href</button>
+<p>点击按钮修改后，可以点击链接查看链接地址是否变化</p>
+<script type="text/javascript">
+	$("button").click(function(){
+		$("#test").attr("href","https://github.com/olivivian");
+	});
+</script>-->
+
+<h1>设置多个属性值</h1>
+<!--jQuery attr()方法设置多个属性值
+<p><a href="http://www.runoob.com" id="runoob">菜鸟教程</a></p>
+<button>修改href和title</button>
+<p>点击按钮修改后，可以查看href和title是否变化</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("#runoob").attr({
+				"href":"https://www.baidu.com/",
+				"title":"百度"
+			});
+			title=$("#runoob").attr("title");
+			$("#runoob").html(title);
+		});
+	});
+</script>-->
+
+<h1>使用回调函数调用attr()</h1>
+<!--设置属性值 + 并使用回调函数调用attr().???
+<p><a href="http://www.runoob.com" id="runoob">菜鸟教程</a></p>
+<button>修改 href 值</button>
+​<p>点击按钮修改后，可以点击链接查看 href 属性是否变化。</p>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#runoob").attr("href", function(i, origValue){
+            return origValue + "/jquery";
+        });
+    });
+});
+</script>-->
+</body>
+</html>

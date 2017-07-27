@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery动画</title>
+	<script src="js/jquery-3.2.1.min.js">
+</script>
+</head>
+<body>
+<h1>动画,向右移动</h1>
+<!-- jQuery animate()方法-->
+<button>开始动画</button>
+<p>默认情况下，所以HTML元素有一个静态的位置，且是不可移动的。如果需要改变行为，我们需要将元素的position属性设置为relative,fixed,或absolute!</p>
+<div style="width: 100px;height: 100px;background:#98bf21;position: absolute;"></div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("div").animate({left:"250px"});
+		});
+	});
+</script>
+<br><br><br><br><br>
+<h1>动画，加上多种样式</h1>
+<!-- jQuery animate()方法改变样式
+<button>开始动画</button>
+<p>默认情况下，所以HTML元素有一个静态的位置，且是不可移动的。如果需要改变行为，我们需要将元素的position属性设置为relative,fixed,或absolute!</p>
+<div style="width: 100px;height: 100px;background:#98bf21;position: absolute;"></div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+           $("div").animate(
+           {//加逗号，不加分号
+           	left:'250px',
+           	width:'150px',
+           	height:'150px',
+           	opacity:'0.5'
+           }
+           	);
+		});
+	});
+</script>-->
+<br><br><br><br><br>
+<h1>动画，animate()方法使用相对值</h1>
+<!--jQuery animate()方法中使用相对值,定义相对值（该值相对于元素的当前值）。需要在值的前面加上 += 或 -=。
+<button>开始动画</button>
+<p>默认情况下，所有的 HTML 元素有一个静态的位置，且是不可移动的。 如果需要改变为，我们需要将元素的 position 属性设置为 relative, fixed, 或 absolute!</p>
+<div style="width: 100px;height: 100px;background:#98bf21;position: absolute;"></div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("div").animate({
+				width:'+=150px',//每点一次按钮宽就会加150px
+				height:'+=150px',
+				left:'250px'
+			});
+		});
+	});
+</script>-->
+<br><br><br><br><br>
+<h1>动画，animate()使用"hide", "show", "toggle"值</h1>
+<!-- animate() 方法预定义 "hide", "show", "toggle" 值
+<button>开始动画</button>
+<p>默认情况下，所有的 HTML 元素有一个静态的位置，且是不可移动的。 如果需要改变为，我们需要将元素的 position 属性设置为 relative, fixed, 或 absolute!</p>
+<div style="width: 100px;height: 100px;background:#98bf21;position: absolute;"></div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("div").animate({
+				height:'toggle'//不加分号
+			});
+		});
+	});
+</script>-->
+<br><br><br><br><br>
+<h1>复杂动画效果，使用到变量，使用队列功能</h1>
+<span>默认地，jQuery 提供针对动画的队列功能。<br>
+这意味着如果您在彼此之后编写多个 animate() 调用，<br>jQuery 会创建包含这些方法调用的"内部"队列。然后逐一运行这些 animate 调用。</span><br>
+<!--更多 jQuery animate()方法实例
+<p>默认情况下，所有的 HTML 元素有一个静态的位置，且是不可移动的。 如果需要改变为，我们需要将元素的 position 属性设置为 relative, fixed, 或 absolute!</p>
+<button>开始动画</button>
+<div style="width: 100px;height: 100px;background:#98bf21;position: absolute;"></div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			var div=$("div");
+			div.animate({height:'300px',opacity:'0.4'},'slow');
+			div.animate({width:'300px',opacity:'0.8'},'slow');
+			div.animate({height:'100px',opacity:'0.4'},'slow');
+			div.animate({width:'100px',opacity:'0.8'},'slow');
+		});
+	});
+</script>-->
+<br><br><br><br><br>
+<h1>多个animate()回调</h1>
+<!--更多 jQuery animate()方法实例(多个animate()回调)
+<button>开始动画</button>
+<p>默认情况下，所有的 HTML 元素有一个静态的位置，且是不可移动的。 
+如果需要改变为，我们需要将元素的 position 属性设置为 relative, fixed, 或 absolute!</p>
+<div style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('button').click(function(){
+			var div=$('div');
+			div.animate({left:'100px'},'slow');
+			div.animate({fontSize:'3em'},'slow');
+		});
+	});
+</script>-->
+<br><br><br><br><br>
+<span>注：	可以用 animate() 方法来操作所有 CSS 属性吗？<br>
+是的，几乎可以！<br>
+不过，需要记住一件重要的事情：当使用 animate() 时，必须使用 Camel 标记法书写所有的属性名，<br>
+比如，必须使用 paddingLeft 而不是 padding-left，使用 marginRight 而不是 margin-right，等等。<br>
+同时，色彩动画并不包含在核心 jQuery 库中。<br>
+如果需要生成颜色动画，您需要从 jquery.com 下载 颜色动画 插件。</span>>
+</body>
+</html>

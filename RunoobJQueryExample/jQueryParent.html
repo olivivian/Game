@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery遍历-祖先</title>
+<script src="js/jquery-3.2.1.min.js"></script>
+<style type="text/css">
+.ancestors * {
+	display: block;
+	border: 2px solid lightgrey;
+	color: lightgrey;
+	padding: 5px;
+	margin: 15px;
+}
+</style>
+</head>
+<body>
+<h1>只找父元素</h1>
+<!-- jQuery parent() 方法返回被选元素的直接父元素
+<div class="ancestors">
+	<div style="width: 500px;">div(曾祖父元素)
+		<ul>ul(祖父元素)
+			<li>li(父元素)
+				<span>span</span>
+			</li>
+		</ul>
+	</div>
+
+	<div style="width: 500px;">div(祖父元素)
+	<p>p(父元素)
+		<span>span</span>
+	</p>
+    </div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("span").parent().css({"color":"red","border":"2px solid red"});
+	});
+</script>-->
+
+
+<h1>找所有祖先元素</h1>
+<!-- jQuery parents()方法返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (<html>),可以使用可选参数来过滤对祖先元素的搜索。
+<div class="ancestors">
+<div style="width: 500px;" >
+	div(曾祖父元素)
+	<ul>
+		ul(祖父元素)
+		<li>
+			li(父元素)
+			<span>span</span>
+		</li>
+	</ul>
+</div>
+</div>
+<script>
+$(document).ready(function(){
+  $("span").parents().css({"color":"red","border":"2px solid red"});
+});
+</script>-->
+
+
+<h1>返回介于两个给定元素之间的所有祖先元素</h1>
+<h3>下面的例子返回介于 &lt;span&gt;与 &lt;div&gt;元素之间的所有祖先元素</h3>
+<!--jQuery parentsUntil()方法-->
+<div class="ancestors">
+  <div style="width:500px;">div (曾祖父元素)
+    <ul>ul (祖父元素)  
+      <li>li (父元素)
+        <span>span</span>
+      </li>
+    </ul>   
+  </div>
+</div>
+<script>
+$(document).ready(function(){
+  $("span").parentsUntil("div").css({"color":"red","border":"2px solid red"});
+});
+</script>
+
+</body>
+</html>

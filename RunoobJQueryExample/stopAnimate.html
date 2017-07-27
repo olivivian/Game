@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JQuery停止动画</title>
+<script src="js/jquery-3.2.1.min.js">
+</script>
+<style type="text/css"> 
+#panel, #flip {
+	padding: 5px;
+	text-align: center;
+	background-color: #e5eecc;
+	border: solid 1px #c3c3c3;
+}
+#panel {
+	padding: 50px;
+	display: none;
+}
+#demo{
+	width: 200px;
+	height: 100px;
+	background:#e5eecc;
+	position:absolute;
+}
+</style>
+</head>
+<body>
+<h1>停止滑动</h1>
+<!--jQuery stop()方法
+<button>停止滑动</button>
+<div id="flip">点我向下滑动面板</div>
+<div id="panel">Hello world!</div>
+<script type="text/javascript">
+	$(document).ready(function(){//注意加上function()
+		$("#flip").click(function(){
+			$("#panel").slideDown(5000);
+		});
+		$("button").click(function(){
+			$("#panel").stop();
+		});
+	});
+</script>-->
+<h1>开始，停止动画</h1>
+<!--jQuery stop()方法，带参数-->
+<button id="start">开始</button>
+<button id="stop">停止</button>
+<button id="stop2">停止所有</button>
+<button id="stop3">停止动画，但完成动作</button>
+<p>点击 "开始" 按钮开始动画。</p>
+<p>点击 "停止" 按钮停止当前激活的动画，但之后我们能再动画队列中再次激活。</p>
+<p>点击 "停止所有" 按钮停止当前动画，并清除动画队列，所以元素的所有动画都会停止。</p>
+<p>点击 "停止动画，但完成动作" 快速完成动作，并停止它。</p>
+<p style="color: green;">默认情况下，所有的 HTML 元素有一个静态的位置，且是不可移动的。 如果需要改变为，我们需要将元素的 position 属性设置为 relative, fixed, 或 absolute!</p>
+<div id="demo">HELLO</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#start").click(function(){
+			$("#demo").animate({left:'150px'},5000);
+			$("#demo").animate({fontSize:'3em'},5000);
+		});
+		$("#stop").click(function(){
+			$("#demo").stop();
+		});
+		$("#stop2").click(function(){
+			$("#demo").stop(true);
+		});
+		$("#stop3").click(function(){
+			$("#demo").stop(true,true);
+		});
+	});
+</script>
+</body>
+</html>

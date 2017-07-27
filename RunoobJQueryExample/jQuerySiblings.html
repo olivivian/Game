@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery遍历-同胞</title>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<style>
+.siblings *
+{ 
+	display: block;
+	border: 2px solid lightgrey;
+	color: lightgrey;
+	padding: 5px;
+	margin: 15px;
+}
+</style>
+</head>
+<body>
+<!--在DOM树中遍历元素的同胞元素-->
+
+<h1>返回&lt;h2&gt;的所有同胞元素</h1>
+<!-- jQuery siblings()方法,返回被选元素的所有同胞元素
+<div class="siblings">(父元素)
+	<p>p</p>
+	<span>span</span>
+	<h2>h2</h2>
+	<h3>h3</h3>
+	<p>p</p>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("h2").siblings().css({
+			"color":"red","border":"2px solid red"
+		});
+	});
+</script>-->
+
+<h1>返回属于 &lt;h2&gt; 的同胞元素的所有 &lt;p&gt; 元素</h1>
+<!--使用可选参数来过滤对同胞元素的搜索
+<div class="siblings">(父元素)
+	<p>p</p>
+	<span>span</span>
+	<h2>h2</h2>
+	<h3>h3</h3>
+	<p>p</p>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("h2").siblings("p").css({
+			"color":"red","border":"2px solid red"
+		});
+	});
+</script>-->
+
+<h1>返回 &lt;h2&gt; 的下一个同胞元素</h1>
+<!-- jQuery next()方法,返回被选元素的下一个同胞元素,该方法只返回一个元素
+<div class="siblings">(父元素)
+	<p>p</p>
+	<span>span</span>
+	<h2>h2</h2>
+	<h3>h3</h3>
+	<p>p</p>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("h2").next().css({"color":"red","border":"2px solid red"});
+	});
+</script>-->
+
+<h1>返回 &lt;h2&gt; 的所有跟随的同胞元素</h1>
+<!-- jQuery nextAll()方法,返回被选元素的所有跟随的同胞元素
+<div class="siblings">(父元素)
+	<p>p</p>
+	<span>span</span>
+	<h2>h2</h2>
+	<h3>h3</h3>
+	<p>p</p>
+</div>
+<script>
+$(document).ready(function(){
+	$("h2").nextAll().css({"color":"red","border":"2px solid red"});
+});
+</script>-->
+
+
+<h1>返回介于&lt;h2&gt;  与 &lt;h6&gt;  元素之间的所有同胞元素</h1>
+<!--jQuery nextUntil()方法,返回介于两个给定参数之间的所有跟随的同胞元素-->
+<div class="siblings">div (父元素)
+  <p>p</p>
+  <span>span</span>
+  <h2>h2</h2>
+  <h3>h3</h3>
+  <h4>h4</h4>
+  <h5>h5</h5>
+  <h6>h6</h6>
+  <p>p</p>
+</div>
+<script>
+$(document).ready(function(){
+	$("h2").nextUntil("h6").css({"color":"red","border":"2px solid red"});
+});
+</script>
+
+
+</body>
+</html>

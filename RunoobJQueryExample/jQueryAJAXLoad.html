@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery AJAX load()方法</title>
+	<script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<!--jQuery load() 方法是简单但强大的 AJAX 方法。
+load() 方法从服务器加载数据，并把返回的数据放入被选元素中。
+-->
+<!--
+<h1>异步载入文件内容并插入到&lt;div&gt; 元素中</h1>
+<div id="div1">
+	<h2>使用JQuery AJAX修改文本内容</h2>
+</div>
+<button>获取外部内容</button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("#div1").load("demo_test.txt");
+		});
+	});
+</script>-->
+
+<h1>异步载入文件内容中指定的元素内容并插入到&lt;div&gt; 元素.</h1>
+<!--
+<div id="div1"><h2>使用 jQuery AJAX 修改文本</h2></div>
+<button>获取外部文本</button>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").load("demo_test.txt #p1");
+  });
+});
+</script>-->
+
+<h1>使用 jQuery load() 方法的回调函数</h1>
+<!---->
+<div id="div1"><h2>使用 jQuery AJAX 修改该文本</h2></div>
+<button>获取外部内容</button>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("#div1").load("demo_test.txt",function(responseTxt,statusTxt,xhr){
+				if (statusTxt=="success") {
+					alert("外部内容加载成功！");
+				}
+				if (statusTxt=="error") {
+					alert("Error: "+xhr.status+": "+xhr.statusTxt);
+				}
+			});
+		});
+	});
+</script>
+
+
+
+</body>
+</html>

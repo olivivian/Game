@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery遍历-后代</title>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<style>
+.descendants *
+{ 
+	display: block;
+	border: 2px solid lightgrey;
+	color: lightgrey;
+	padding: 5px;
+	margin: 15px;
+}
+</style>
+</head>
+<body>
+<!--向下遍历 DOM 树，以查找元素的后代。-->
+
+<h1>返回被选元素的所有直接子元素</h1>
+<!-- children()方法，只会向下一级对DOM树进行遍历
+<div class="descendants" style="width: 500px;">div(当前元素)
+<p>p(儿子元素)
+	<span>span(孙子元素)</span>
+</p>
+<p>p(儿子元素)
+	<span>span(孙子元素)</span>
+</p>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("div").children().css({"color":"red","border":"2px solid"});
+	});
+</script>-->
+<!--children()带参数过滤
+<h1>可选参数来过滤对子元素的搜索</h1>
+<div class="descendants" style="width: 500px;">div(当前元素)
+<p class="1">p(儿子元素)
+	<span>span(孙子元素)</span>
+</p>
+<p class="2">p(儿子元素)
+	<span>span(孙子元素)</span>
+</p>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("div").children("p.1").css({"color":"red","border":"2px solid"});
+	});
+</script>-->
+
+
+<h1>返回属于 &lt;div&gt; 后代的所有 &lt;span&gt; 元素</h1>
+<!--find()方法,返回被选元素的后代元素，一路向下直到最后一个后代
+<div class="descendants" style="width:500px;">div (当前元素) 
+  <p>p (儿子元素)
+    <span>span (孙子元素)</span>     
+  </p>
+  <p>p (儿子元素)
+    <span>span (孙子元素)</span>
+  </p> 
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("div").find("span").css({
+			"color":"red","border":"2px solid red"
+		});
+	});
+</script>-->
+
+<h1>返回 &lt;div&gt; 的所有后代</h1>
+<div class="descendants" style="width:500px;">div (当前元素) 
+  <p>p (儿子元素)
+    <span>span (孙子元素)</span>     
+  </p>
+  <p>p (儿子元素)
+    <span>span (孙子元素)</span>
+  </p> 
+</div>
+<script>
+$(document).ready(function(){
+  $("div").find("*").css({"color":"red","border":"2px solid red"});
+});
+</script>
+
+</body>
+</html>

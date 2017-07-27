@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery淡入淡出</title>
+	<script src="js/jquery-3.2.1.min.js">
+</script>
+</head>
+<body>
+<h1>点击淡入div元素，fadeIn()方法</h1>
+<!--jQuery fadeIn()方法，用于淡入已隐藏的元素。-->
+<p>演示不同fadeIn()使用了不同参数的效果</p>
+<button>点击淡入div元素</button>
+<div id="demo1" style="width: 80px;height: 80px;background: blue; margin: 10px; display: none;"></div>
+<div id="demo2" style="width: 80px;height: 80px;background:red;margin: 10px;display: none; "></div>
+<div id="demo3" style="width: 80px;height: 80px;background: green;margin: 10px;display: none;"></div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+         $("#demo1").fadeIn();
+         $("#demo2").fadeIn("slow");
+         $("#demo3").fadeIn(3000);
+		});
+	});
+</script>
+
+<h1>点击淡出div元素,fadeOut()方法</h1>
+<!--jQuery fadeOut()方法,用于淡出可见元素。
+<p>以下实例演示了fadeOut()使用了不同参数的效果</p>
+<button>点击淡出</button><br><br>
+<div id="demo1" style="width: 80px;height: 80px;background: blue;"></div><br>
+<div id="demo2" style="width: 80px;height: 80px;background: red;"></div><br>
+<div id="demo3" style="width: 80px;height: 80px;background: green;"></div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("#demo1").fadeOut();
+			$("#demo2").fadeOut("slow");
+			$("#demo3").fadeOut(3000);
+		});
+	});
+</script>-->
+
+<h1>点击淡入和淡出,fadeToggle()方法</h1>
+<!--jQuery fadeToggle()方法，adeIn()与fadeOut()方法之间进行切换。 
+<p>实例演示了fadeToggle()使用了不同的speed(速度)参数。</p>
+<button>点击淡入/淡出</button>
+<br><br>
+<div id="demo1" style="width: 80px;height: 80px;background: blue;"></div><br>
+<div id="demo2" style="width: 80px;height: 80px;background: red;"></div><br>
+<div id="demo3" style="width: 80px;height: 80px;background: green;"></div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("#demo1").fadeToggle();
+			$("#demo2").fadeToggle("slow");
+			$("#demo3").fadeToggle(3000);
+		});
+	});
+</script>-->
+
+<h1>让颜色变淡,fadeTo()方法</h1>
+<!--jQuery fadeTo()方法，允许渐变为给定的不透明度（值介于 0 与 1 之间）。
+<p>演示fadeTo()使用不同参数</p>
+<button>点击让颜色变淡</button><br><br>
+<div id="demo1" style="height: 80px;width: 80px;background: red;"></div><br>
+<div id="demo2" style="height: 80px;width: 80px;background: green;"></div><br>
+<div id="demo3" style="height: 80px;width: 80px;background: blue;"></div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("#demo1").fadeTo("slow",0.15);
+			$("#demo2").fadeTo("slow",0.4);
+			$("#demo3").fadeTo("slow",0.7);
+		});
+	});
+</script>-->
+<!---->
+</body>
+</html>
